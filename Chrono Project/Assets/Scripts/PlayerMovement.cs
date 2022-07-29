@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerSpeed;
     public float mouseRotationSpeed;
 
+    private Animator playerAnim;
+
     void Movement()
     {
         float xInput = Input.GetAxis("Horizontal");
@@ -16,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movementVector = new Vector3(xInput,yInput,zInput);
 
         //aply movement to scene
-        transform.Translate(movementVector * playerSpeed * Time.deltaTime, Space.World);
+        transform.Translate(movementVector * playerSpeed * Time.deltaTime, Space.Self);
 
 
     }
@@ -34,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
