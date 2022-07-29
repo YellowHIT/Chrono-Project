@@ -8,12 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public float mouseRotationSpeed;
     public float lookXLimitUp;
     public float lookXLimitDown;
+    public float x, y, z;
     
     CharacterController characterController;
 
-    private Animator playerAnim;
+    
 
-    void Movement()
+    public void Movement()
     {
         float xInput = Input.GetAxis("Horizontal");
         float yInput = 0;//Zero
@@ -23,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
 
         //aply movement to scene
         transform.Translate(movementVector * playerSpeed * Time.deltaTime, Space.Self);
+        transform.position = new Vector3(transform.position.x + x/100, 1.661f + y/100, transform.position.z + z/100);
+
+        
 
 
     }
@@ -53,15 +57,12 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         // Cursor.visible = false;
-=======
-        playerAnim = GetComponent<Animator>();
->>>>>>> 85f9c1fce611e392f0527b0f843a5962b7cf6ff1
+        
     }
 
     // Update is called once per frame
