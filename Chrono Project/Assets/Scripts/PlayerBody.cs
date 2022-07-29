@@ -38,8 +38,8 @@ public class PlayerBody : MonoBehaviour
     {
         Vector3 moveTo = new Vector3(vector.position.x , 0.05f, vector.position.z);
         Vector3 tmp =  transform.position;
-        tmp.x = Mathf.Round((tmp.x-moveTo.x)*100f) / 100f;
-        tmp.z = Mathf.Round((tmp.z-moveTo.z)*100f) / 100f;
+        tmp.x = Mathf.Round((tmp.x-moveTo.x)*50f) / 50f;
+        tmp.z = Mathf.Round((tmp.z-moveTo.z)*50f) / 50f;
 
         // Debug.Log(tmp);
         if(tmp.x != 0 || tmp.z != 0)
