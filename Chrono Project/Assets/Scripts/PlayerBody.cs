@@ -16,7 +16,7 @@ public class PlayerBody : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         vector = camera.GetComponent<Transform>();
         speed = camera.GetComponent<PlayerMovement>().playerSpeed;
-        Debug.Log(vector);
+        //Debug.Log(vector);
 
         
     }
@@ -30,11 +30,16 @@ public class PlayerBody : MonoBehaviour
     }
     void LateUpdate()
     {
-        playerAnim.SetBool("Move", false);//TODO
-        Vector3 moveTo = new Vector3(vector.position.x , 0.05f, vector.position.z);
-        transform.position = moveTo;
+        playerAnim.SetBool("Move", false);
+        MoveTo();
+    }
 
-        if(moveTo.x != 0 || moveTo.z != 0)
+    void MoveTo()
+    {
+        Vector3 moveTo = new Vector3(vector.position.x , 0.05f, vector.position.z);
+        
+        Debug.Log(moveTo + " " + transform.position);
+        if(moveTo.x != transform.position.x || moveTo.z != transform.position.z)
         {
             playerAnim.SetBool("Move", true);//TODO
         }
@@ -42,12 +47,15 @@ public class PlayerBody : MonoBehaviour
         {
             playerAnim.SetBool("Move", false); //TODO
         }
+
+        transform.position = moveTo;
     }
+
 
     void Rotation()
     {
        Vector3 rotationdiff = vector.eulerAngles - transform.eulerAngles;
        transform.Rotate(0, rotationdiff.y, 0);
-       Debug.Log(rotationdiff);
+       //Debug.Log(rotationdiff);
     }
 }
