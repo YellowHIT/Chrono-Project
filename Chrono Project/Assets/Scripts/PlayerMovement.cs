@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     CharacterController characterController;
 
+    private Animator playerAnim;
+
     void Movement()
     {
         float xInput = Input.GetAxis("Horizontal");
@@ -20,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movementVector = new Vector3(xInput,yInput,zInput);
 
         //aply movement to scene
-        transform.Translate(movementVector * playerSpeed * Time.deltaTime, Space.World);
+        transform.Translate(movementVector * playerSpeed * Time.deltaTime, Space.Self);
 
 
     }
@@ -51,11 +53,15 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
         // Cursor.visible = false;
+=======
+        playerAnim = GetComponent<Animator>();
+>>>>>>> 85f9c1fce611e392f0527b0f843a5962b7cf6ff1
     }
 
     // Update is called once per frame
