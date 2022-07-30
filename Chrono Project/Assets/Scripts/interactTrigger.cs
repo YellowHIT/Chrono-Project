@@ -27,7 +27,7 @@ using UnityEngine;
 
     private void Update()
     {
-        if (triggerActive && Input.GetKeyDown(KeyCode.e))
+        if (triggerActive && Input.GetKeyDown(KeyCode.E))
         {
             triggerAction();
         }
@@ -35,6 +35,6 @@ using UnityEngine;
     //TODO some  action in the world 
     public void triggerAction()
     {
-        Debug.Log('Some cool stuff @' + Time.time);
+        Debug.Log("Some cool stuff @" + Time.time);
     }
 }
