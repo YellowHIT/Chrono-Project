@@ -30,7 +30,7 @@ public class PlayerBody : MonoBehaviour
     }
     void LateUpdate()
     {
-        playerAnim.SetBool("Move", false);
+        //playerAnim.SetBool("Move", false);
         MoveTo();
     }
 
