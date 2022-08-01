@@ -3494,7 +3494,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.19
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -3541,13 +3541,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef25b5c0402f5a441913f4dc8b5ab3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
+  playerSpeed: 4
   mouseRotationSpeed: 1
   lookXLimitUp: 300
   lookXLimitDown: 48.5
   x: 0
   y: 16.3
   z: 0
+  rb: {fileID: 0}
+  moveInput: {x: 0, y: 0, z: 0}
 --- !u!95 &963194230
 Animator:
   serializedVersion: 4
