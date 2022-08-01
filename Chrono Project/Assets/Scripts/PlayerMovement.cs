@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float lookXLimitUp;
     public float lookXLimitDown;
     public float x, y, z;
-    
+    public Rigidbody rb;
     CharacterController characterController;
 
     
@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
         float xInput = Input.GetAxis("Horizontal");
         float yInput = 0;//Zero
         float zInput = Input.GetAxis("Vertical");
-
+        
         Vector3 movementVector = new Vector3(xInput,yInput,zInput);
 
         //aply movement to scene
@@ -58,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb.velocity = new Vector3(0, 10, 0);
         //calling movement func
         Movement();
 
