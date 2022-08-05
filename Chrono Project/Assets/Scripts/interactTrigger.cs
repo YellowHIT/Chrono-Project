@@ -55,10 +55,15 @@ using UnityEngine;
     {
         Debug.Log("action ended @" + Time.time);
     }
-    public IEnumerator ExecuteAfterTime(float time)
+    public virtual  
+    
+    
+    IEnumerator ExecuteAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
         actionTrigger=false;
     
     }
+
+
 }
